@@ -32,6 +32,13 @@
     text-align:center;
     padding:5px;
 }
+
+#checkboxs {
+    background-color:#dddddd;
+    color:white;
+    text-align:left;
+    padding:10px;
+}
 </style>
 
 </head>
@@ -40,6 +47,13 @@
 <body>
 <div id="header">
     <h1>City Gallery</h1>
+</div>
+<div id="checkboxs">
+    <input type="checkbox" id="check1" name="checkbox[]" value="1"/>ID
+    <input type="checkbox" id="check1" name="checkbox[]" value="1"/>ID
+    <input type="checkbox" id="check1" name="checkbox[]" value="1"/>ID
+    <hr>
+    <input type="button" value="Reload" onclick="fun()"/>
 </div>
 
 <div id="nav">
@@ -63,6 +77,18 @@ Standing on the River Thames, London has been a major settlement for two millenn
 <div id="footer">
 Copyright ? Frank 
 </div>
+<script>
+    function fun() {
+        var checks = document.getElementsByName("checkbox[]");
+        var n = 0
+        for(var i=0; i < checks.length; i++){
+            if(checks[i].checked)
+                n++;
+        }
+        alert("Check total is"+n);
+    }
 
+
+</script>
 </body>
 </html>
